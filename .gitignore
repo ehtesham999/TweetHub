@@ -1,6 +1,6 @@
 # Virtual environment
 venv/
-
+venv_tweet/
 # Python cache
 __pycache__/
 *.pyc

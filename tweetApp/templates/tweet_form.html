@@ -1,0 +1,22 @@
+{% extends "tweets.html" %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(18,168,255,0.10); padding: 40px 32px 32px 32px;">
+    <h2 style="text-align:center; margin-bottom: 28px; color: #12a8ff; font-weight: 700; letter-spacing: 1px;">{% if form.instance.pk %}Edit Tweet{% else %}Create Tweet{% endif %}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div style="margin-bottom: 18px;">
+            {{ form.text.label_tag }}<br>
+            {{ form.text }}
+        </div>
+        <div style="margin-bottom: 24px;">
+            {{ form.image.label_tag }}<br>
+            {{ form.image }}
+        </div>
+        <div style="display: flex; justify-content: center; gap: 16px;">
+            <button type="submit" class="btn btn-primary" style="background: #12a8ff; border: none; padding: 10px 28px; border-radius: 5px; font-weight: 600;">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+            <a href="{% url 'list' %}" class="btn btn-secondary" style="background: #eee; color: #222; padding: 10px 28px; border-radius: 5px; text-decoration: none; font-weight: 600; border: 1px solid #ccc;">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
