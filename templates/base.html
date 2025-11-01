@@ -45,17 +45,14 @@
     <header>
         <h1>TweetHub</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <a href="{%url 'list' %}" style="background: #12a8ff; color: #fff; padding: 7px 18px; border-radius: 5px; text-decoration: none; margin-right: 12px; font-weight: 600;">See Tweets</a>
+            <a href="/login">Sign in</a>
+            <a href="/register">Sign up</a>
         </nav>
     </header>
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
-        <p>&copy; 2023 TweetHub. All rights reserved.</p>
-    </footer>
 </body>
 </html>
